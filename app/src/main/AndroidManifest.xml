@@ -43,6 +43,22 @@
         <service android:name=".binderpool.BinderPoolService"
             android:process=":remote"/>
 
+        <activity android:name=".RecyclerActivityTest"/>
+        <activity android:name=".nav.NavigationActivity"
+            android:theme="@style/OneActivityTheme"/>
+
+        <activity android:name=".game.onefile.TicTacToeActivity"
+            android:label="@string/tic_tac_toe_label"/>
+
+        <activity android:name=".game.mvc.controller.TicTacToeMVC"
+            android:label="@string/tic_tac_toe_label"/>
+
+        <activity android:name=".game.mvp.view.TicTacToeMVP"
+            android:label="@string/tic_tac_toe_label"/>
+
+        <activity android:name=".game.mvvm.view.TicTacToeMVVM"
+            android:label="@string/tic_tac_toe_label"/>
+
         <activity android:name=".IntentFilterActvity">
             <intent-filter>
                 <action android:name="com.test.action.INTENT"/>

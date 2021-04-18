@@ -42,7 +42,8 @@ public class TestButton extends TextView {
     public boolean onTouchEvent(MotionEvent event) {
         int x = (int) event.getRawX();
         int y = (int) event.getRawY();
-        Log.i(TAG, "onTouchEvent, x : " + x + " y : " + y);
+        Log.i(TAG, "onTouchEvent, action : " + event.getAction() + " rawX : " + x + " rawY : " + y);
+        Log.i(TAG, "onTouchEvent, action : " + event.getAction() + " x : " + event.getX() + " y : " + event.getY());
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 break;

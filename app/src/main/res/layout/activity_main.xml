@@ -8,9 +8,17 @@
 
     <Button
         android:id="@+id/test"
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+
+    <Button
+        android:id="@+id/start_tic_tac_toe"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_tic_tac_toe" />
 
     <Button
         android:id="@+id/testbinder"
@@ -25,10 +33,22 @@
         android:text="@string/add_book" />
 
     <Button
+        android:id="@+id/one_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/one_activity" />
+
+    <Button
         android:id="@+id/get_books"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/get_books" />
+
+    <Button
+        android:id="@+id/start_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_recycler" />
 
     <Button
         android:id="@+id/start_activity"

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.test.myapplication.game.mvvm.viewmodel.TicTacToeViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="50dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="50dp"
+        android:gravity="center_horizontal">
+
+        <GridLayout
+            android:id="@+id/button_grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <Button
+                android:text='@{viewModel.mCells["00"]}'
+                android:onClick="@{() -> viewModel.onCellClickedAt(0, 0)}"
+                style="@style/TicTacToeButton"/>
+
+            <Button
+                android:text='@{viewModel.mCells["01"]}'
+                android:onClick="@{() -> viewModel.onCellClickedAt(0, 1)}"
+                style="@style/TicTacToeButton"/>
+
+            <Button
+                android:text='@{viewModel.mCells["02"]}'
+                android:onClick="@{() -> viewModel.onCellClickedAt(0, 2)}"
+                style="@style/TicTacToeButton"/>
+
+            <Button
+                android:text='@{viewModel.mCells["10"]}'
+                android:onClick="@{() -> viewModel.onCellClickedAt(1, 0)}"
+                style="@style/TicTacToeButton"/>
+
+            <Button
+                android:text='@{viewModel.mCells["11"]}'
+                android:onClick="@{() -> viewModel.onCellClickedAt(1, 1)}"
+                style="@style/TicTacToeButton"/>
+
+            <Button
+                android:text='@{viewModel.mCells["12"]}'
+                android:onClick="@{() -> viewModel.onCellClickedAt(1, 2)}"
+                style="@style/TicTacToeButton"/>
+
+            <Button
+                android:text='@{viewModel.mCells["20"]}'
+                android:onClick="@{() -> viewModel.onCellClickedAt(2, 0)}"
+                style="@style/TicTacToeButton"/>
+
+            <Button
+                android:text='@{viewModel.mCells["21"]}'
+                android:onClick="@{() -> viewModel.onCellClickedAt(2, 1)}"
+                style="@style/TicTacToeButton"/>
+
+            <Button
+                android:text='@{viewModel.mCells["22"]}'
+                android:onClick="@{() -> viewModel.onCellClickedAt(2, 2)}"
+                style="@style/TicTacToeButton"/>
+
+        </GridLayout>
+
+        <LinearLayout
+            android:id="@+id/winner_payer_view_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.mWinner != null ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:id="@+id/winner_player_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:layout_margin="20dp"
+                android:text="@{viewModel.mWinner}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:text="赢了"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

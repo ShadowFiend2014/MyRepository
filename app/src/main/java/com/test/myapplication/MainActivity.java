@@ -4,16 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -21,6 +17,9 @@ import com.test.myapplication.binderpool.BinderPoolProxy;
 import com.test.myapplication.binderpool.BookManagerImpl;
 import com.test.myapplication.binderpool.ComputeImpl;
 import com.test.myapplication.binderpool.SecurityCenterImpl;
+import com.test.myapplication.game.mvp.view.TicTacToeMVP;
+import com.test.myapplication.game.mvvm.view.TicTacToeMVVM;
+import com.test.myapplication.nav.NavigationActivity;
 
 import java.util.List;
 import java.util.Random;
@@ -67,6 +66,49 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, "onClick ");
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, SecondActivity.class);
+                intent.putExtra("time", System.currentTimeMillis());
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.start_tic_tac_toe).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick start_tic_tac_toe");
+                Intent intent = new Intent();
+                // 一个文件走天下
+//                intent.setClass(MainActivity.this, TicTacToeActivity.class);
+//                intent.putExtra("time", System.currentTimeMillis());
+                // MVC
+//                intent.setClass(MainActivity.this, TicTacToeControllerActivity.class);
+//                intent.putExtra("time", System.currentTimeMillis());
+                // MVP
+//                intent.setClass(MainActivity.this, TicTacToeMVP.class);
+//                intent.putExtra("time", System.currentTimeMillis());
+                // MVVM
+                intent.setClass(MainActivity.this, TicTacToeMVVM.class);
+                intent.putExtra("time", System.currentTimeMillis());
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.one_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick one_activity");
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, NavigationActivity.class);
+                intent.putExtra("time", System.currentTimeMillis());
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.start_recycler).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick start_recycler");
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, RecyclerActivityTest.class);
                 intent.putExtra("time", System.currentTimeMillis());
                 startActivity(intent);
             }
